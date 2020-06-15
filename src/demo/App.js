@@ -21,10 +21,10 @@ function App() {
           icon={CircleLegendIcon} // componente que renderiza o icone
           scrollable={false} // pro relatório este atributo deve ser false
           maxCharacters={999} // quantidade máxima de caracteres por label (se não passar nada, não ter max)
-          disabledIconColor='#d3d3d3'
-          disabledIcon={DefaultDisabledLegendIcon}
-          disabledTextIcon='#d3d3d3'
-          disabledText={DefaultDisabledLegendText}
+          disabledIconColor='#d3d3d3' // cor do icone da legenda quando ela está desativada
+          disabledIcon={DefaultDisabledLegendIcon} // componente utilizado para renderizar o icone quando a legenda está desativada, default is DefaultDisabledLegendIcon
+          disabledTextColor='#d3d3d3' // cor do texto da legenda quando ela está desativada
+          disabledText={DefaultDisabledLegendText} // componente utilizado para renderizar o texto da legenda quando esta está desativada, default is DefaultDisabledLegendText
         />
       </header>
     </div>
