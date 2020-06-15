@@ -1,7 +1,7 @@
 import React from 'react';
 import { generate } from './dataGenerator';
 import Legend from '../Legend';
-import { HORIZONTAL } from '../Legend/orientation';
+import { HORIZONTAL, VERTICAL } from '../Legend/orientation';
 import CircleLegendIcon from '../Legend/icon/CircleLegendIcon';
 import DefaultDisabledLegendText from '../Legend/DefaultDisabledLegendText';
 import DefaultDisabledLegendIcon from '../Legend/DefaultDisabledLegendIcon';
@@ -17,10 +17,10 @@ function App() {
           data={legendData} // [{label,color}]
           onClick={(legend) => {}} // desnecessário pro relatório
           onHover={(event) => {}} // desnecessário pro relatório
-          orientation={HORIZONTAL} // 'HORIZONTAL' | 'VERTICAL'
+          orientation={VERTICAL} // 'HORIZONTAL' | 'VERTICAL'
           icon={CircleLegendIcon} // componente que renderiza o icone
           scrollable={false} // pro relatório este atributo deve ser false
-          maxCharacters={999} // quantidade máxima de caracteres por label (se não passar nada, não ter max)
+          maxCharacters={100} // quantidade máxima de caracteres por label (se não passar nada, não ter max)
           disabledIconColor='#d3d3d3' // cor do icone da legenda quando ela está desativada
           disabledIcon={DefaultDisabledLegendIcon} // componente utilizado para renderizar o icone quando a legenda está desativada, default is DefaultDisabledLegendIcon
           disabledTextColor='#d3d3d3' // cor do texto da legenda quando ela está desativada
