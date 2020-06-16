@@ -1,8 +1,20 @@
 {
-  "name": "simple-chart-legends",
+  "name": "simple-chart-legend",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedroviniv/simple-charts-legend.git"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -19,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare-to-publish": "SET NODE_ENV=production && if exist dist rmdir /s /q dist && mkdir dist && npx babel src/Legend --out-dir dist --copy-files",
+    "publish": "npm run prepare-to-publish && npm publish"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,0 +1,44 @@
+/* GENERAL */
+
+.legend {
+  white-space: nowrap;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* HORIZONTAL */
+
+.legend.horizontal .legend-item {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.legend.horizontal.scrollable {
+  overflow-x: scroll;
+}
+
+.legend.horizontal.plain .legend-item {
+  float: left;
+}
+
+/* VERTICAL */
+
+.legend.vertical.scrollable {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.legend.vertical .legend-item {
+  display: block;
+  margin-top: 5px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend.vertical .legend-item .legend-text {
+  display: inline;
+  vertical-align: initial;
+}
