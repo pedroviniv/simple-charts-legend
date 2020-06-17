@@ -19,8 +19,8 @@
   margin-left: 10px;
 }
 
-.legend.horizontal .legend-item:first-child {
-  margin-left: 0px;
+.legend.horizontal .legend-item:last-child {
+  margin-right: 10px;
 }
 
 .legend.horizontal.scrollable {

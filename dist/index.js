@@ -47,6 +47,14 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function getHorizontalAlignClass(align) {
+  return "horizontal-align-".concat(align.toLowerCase());
+}
+
+function getVerticalAlignClass(align) {
+  return "vertical-align-".concat(align.toLowerCase());
+}
+
 var Legend = function Legend(_ref) {
   var data = _ref.data,
       onClick = _ref.onClick,
@@ -56,6 +64,10 @@ var Legend = function Legend(_ref) {
       scrollable = _ref$scrollable === void 0 ? false : _ref$scrollable,
       _ref$maxCharacters = _ref.maxCharacters,
       maxCharacters = _ref$maxCharacters === void 0 ? -1 : _ref$maxCharacters,
+      _ref$horizontalAlign = _ref.horizontalAlign,
+      horizontalAlign = _ref$horizontalAlign === void 0 ? 'start' : _ref$horizontalAlign,
+      _ref$verticalAlign = _ref.verticalAlign,
+      verticalAlign = _ref$verticalAlign === void 0 ? 'start' : _ref$verticalAlign,
       _ref$icon = _ref.icon,
       icon = _ref$icon === void 0 ? _CircleLegendIcon["default"] : _ref$icon,
       disabledIconColor = _ref.disabledIconColor,
@@ -146,7 +158,9 @@ var Legend = function Legend(_ref) {
   }
 
   var orientationCssClass = (0, _orientation.toCssClass)(orientation);
-  var legendClassName = "legend ".concat(orientationCssClass).concat(scrollable ? ' scrollable' : ' plain');
+  var horizontalAlignClass = getHorizontalAlignClass(horizontalAlign);
+  var verticalAlignClass = getVerticalAlignClass(verticalAlign);
+  var legendClassName = "legend ".concat(orientationCssClass).concat(scrollable ? ' scrollable' : ' plain', " ").concat(horizontalAlignClass, " ").concat(verticalAlignClass);
   return /*#__PURE__*/_react["default"].createElement("ul", {
     className: legendClassName
   }, data.map(renderLegendItem));
