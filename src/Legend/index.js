@@ -6,9 +6,19 @@ import CircleLegendIcon from './icon/CircleLegendIcon';
 import DefaultDisabledLegendText from './DefaultDisabledLegendText';
 import DefaultDisabledLegendIcon from './DefaultDisabledLegendIcon';
 
+function getHorizontalAlignClass(align) {
+  return `horizontal-align-${align.toLowerCase()}`;
+}
+
+function getVerticalAlignClass(align) {
+  return `vertical-align-${align.toLowerCase()}`;
+}
+
 const Legend = ({
   data, onClick, onHover, orientation,
   scrollable = false, maxCharacters = -1,
+  horizontalAlign = 'start',
+  verticalAlign='start',
   icon = CircleLegendIcon,
   disabledIconColor,
   disabledTextColor,
@@ -91,8 +101,10 @@ const Legend = ({
   }
 
   const orientationCssClass = toCssClass(orientation);
+  const horizontalAlignClass = getHorizontalAlignClass(horizontalAlign);
+  const verticalAlignClass = getVerticalAlignClass(verticalAlign);
 
-  const legendClassName = `legend ${orientationCssClass}${scrollable ? ' scrollable' : ' plain'}`;
+  const legendClassName = `legend ${orientationCssClass}${scrollable ? ' scrollable' : ' plain'} ${horizontalAlignClass} ${verticalAlignClass}`;
 
   return (
     <ul className={legendClassName}>

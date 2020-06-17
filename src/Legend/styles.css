@@ -3,27 +3,59 @@
 .legend {
   white-space: nowrap;
   padding-left: 0;
-  width: 100%;
-  height: 100%;
   margin: 0;
+  flex-wrap: wrap;
+  display: flex;
+  list-style: none;
+}
+
+.legend.scrollable {
+  flex-wrap: unset;
 }
 
 /* HORIZONTAL */
 
 .legend.horizontal .legend-item {
-  display: inline-block;
   margin-left: 10px;
+}
+
+.legend.horizontal .legend-item:first-child {
+  margin-left: 0px;
 }
 
 .legend.horizontal.scrollable {
   overflow-x: scroll;
 }
 
-.legend.horizontal.plain .legend-item {
-  float: left;
+.legend.horizontal {
+  flex-direction: row;
+}
+
+.legend.horizontal.horizontal-align-start {
+  justify-content: flex-start;
+}
+.legend.horizontal.horizontal-align-end {
+  justify-content: flex-end;
+}
+.legend.horizontal.horizontal-align-center {
+  justify-content: center;
+}
+.legend.horizontal.vertical-align-start {
+  align-items: flex-start;
+}
+.legend.horizontal.vertical-align-end {
+  align-items: flex-end;
+}
+.legend.horizontal.vertical-align-center {
+  align-items: center;
 }
 
 /* VERTICAL */
+
+.legend.vertical {
+  flex-direction: column;
+  height: 100%;
+}
 
 .legend.vertical.scrollable {
   overflow-y: scroll;
@@ -31,14 +63,31 @@
 }
 
 .legend.vertical .legend-item {
-  display: block;
+  display: flex;
   margin-top: 5px;
   max-width: 100%;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.legend.vertical .legend-item .legend-text {
-  display: inline;
-  vertical-align: initial;
+.legend.horizontal-align-start {
+  align-items: flex-start;
+}
+.legend.horizontal-align-end {
+  align-items: flex-end;
+}
+.legend.horizontal-align-center {
+  align-items: center;
+}
+.legend.vertical-align-start {
+  justify-content: flex-start;
+}
+.legend.vertical-align-end {
+  justify-content: flex-end;
+}
+.legend.vertical-align-center {
+  justify-content: center;
+}
+
+.legend.vertical .legend-item:first-child {
+  margin-top: 0px;
 }
