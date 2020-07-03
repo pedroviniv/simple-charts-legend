@@ -14,7 +14,8 @@
 /* LEGEND ICON */
 
 .legend-icon {
-  margin-right: 10px;
+  margin-right: 0.7em;
+  vertical-align: middle;
 }
 
 .legend-item > .legend-text {

@@ -75,7 +75,9 @@ var Legend = function Legend(_ref) {
       _ref$disabledText = _ref.disabledText,
       disabledText = _ref$disabledText === void 0 ? _DefaultDisabledLegendText["default"] : _ref$disabledText,
       _ref$disabledIcon = _ref.disabledIcon,
-      disabledIcon = _ref$disabledIcon === void 0 ? _DefaultDisabledLegendIcon["default"] : _ref$disabledIcon;
+      disabledIcon = _ref$disabledIcon === void 0 ? _DefaultDisabledLegendIcon["default"] : _ref$disabledIcon,
+      fontSize = _ref.fontSize,
+      iconSize = _ref.iconSize;
 
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -153,7 +155,9 @@ var Legend = function Legend(_ref) {
       icon: icon,
       maxCharacters: maxCharacters,
       disabledIcon: disabledIcon,
-      disabledText: disabledText
+      disabledText: disabledText,
+      fontSize: fontSize,
+      iconSize: iconSize
     });
   }
 

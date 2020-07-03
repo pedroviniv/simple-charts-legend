@@ -11,10 +11,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var DefaultDisabledLegendText = function DefaultDisabledLegendText(_ref) {
   var legend = _ref.legend,
-      disabledTextColor = _ref.disabledTextColor;
+      disabledTextColor = _ref.disabledTextColor,
+      fontSize = _ref.fontSize;
   return /*#__PURE__*/_react["default"].createElement("span", {
     style: {
-      color: disabledTextColor
+      color: disabledTextColor,
+      fontSize: fontSize
     }
   }, legend.label);
 };

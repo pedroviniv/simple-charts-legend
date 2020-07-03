@@ -49,11 +49,12 @@ function renderComponentOrContent(compOrContent, props) {
   return rendered;
 }
 
-function renderIcon(icon, disabledIcon, legend, disabledColor) {
+function renderIcon(icon, disabledIcon, legend, disabledColor, size) {
   var rendered;
   var props = {
     legend: legend,
-    disabledColor: disabledColor
+    disabledColor: disabledColor,
+    size: size
   };
 
   if (!legend.disabled) {
@@ -63,6 +64,17 @@ function renderIcon(icon, disabledIcon, legend, disabledColor) {
   }
 
   return rendered;
+}
+/**
+ * default icon size used if a size is not provided
+ */
+
+
+function defaultIconSize() {
+  return {
+    width: '13px',
+    height: '13px'
+  };
 }
 /**
  * componente que renderiza um item de legenda
@@ -93,7 +105,10 @@ var LegendItem = function LegendItem(_ref) {
       _ref$disabledText = _ref.disabledText,
       disabledText = _ref$disabledText === void 0 ? _DefaultDisabledLegendText["default"] : _ref$disabledText,
       _ref$disabledIcon = _ref.disabledIcon,
-      disabledIcon = _ref$disabledIcon === void 0 ? _DefaultDisabledLegendIcon["default"] : _ref$disabledIcon;
+      disabledIcon = _ref$disabledIcon === void 0 ? _DefaultDisabledLegendIcon["default"] : _ref$disabledIcon,
+      _ref$iconSize = _ref.iconSize,
+      iconSize = _ref$iconSize === void 0 ? defaultIconSize() : _ref$iconSize,
+      fontSize = _ref.fontSize;
   var className = "legend-item".concat(disabled ? ' disabled' : '');
 
   var target = _objectSpread(_objectSpread({}, item), {}, {
@@ -101,7 +116,7 @@ var LegendItem = function LegendItem(_ref) {
     disabled: disabled
   });
 
-  var renderedIcon = renderIcon(icon, disabledIcon, target, disabledIconColor);
+  var renderedIcon = renderIcon(icon, disabledIcon, target, disabledIconColor, iconSize);
   var maxCharactersStyle = maxCharacters === -1 ? {} : {
     maxWidth: "".concat(maxCharacters, "ch")
   };
@@ -131,8 +146,13 @@ var LegendItem = function LegendItem(_ref) {
     style: maxCharactersStyle
   }, target.disabled ? disabledText({
     legend: target,
-    disabledTextColor: disabledTextColor
-  }) : /*#__PURE__*/_react["default"].createElement("span", null, target.label)));
+    disabledTextColor: disabledTextColor,
+    fontSize: fontSize
+  }) : /*#__PURE__*/_react["default"].createElement("span", {
+    style: {
+      fontSize: fontSize
+    }
+  }, target.label)));
 };
 
 var _default = LegendItem;
