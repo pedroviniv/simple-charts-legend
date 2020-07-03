@@ -6,14 +6,14 @@ import CircleLegendIcon from '../Legend/icon/CircleLegendIcon';
 import DefaultDisabledLegendText from '../Legend/DefaultDisabledLegendText';
 import DefaultDisabledLegendIcon from '../Legend/DefaultDisabledLegendIcon';
 
-const legendData = generate(3);
+const legendData = generate(10);
 
 function App() {
   return (
     <div className="App">
       <header className="App-header" style={{
         display: 'flex', flexDirection: 'column',
-        width: '800px', height: '400px'}}>
+        width: '400px', height: '400px', fontSize: '80%'}}>
 
         <Legend
           data={legendData} // [{label,color}]
@@ -29,6 +29,8 @@ function App() {
           disabledIcon={DefaultDisabledLegendIcon} // componente utilizado para renderizar o icone quando a legenda está desativada, default is DefaultDisabledLegendIcon
           disabledTextColor='#d3d3d3' // cor do texto da legenda quando ela está desativada
           disabledText={DefaultDisabledLegendText} // componente utilizado para renderizar o texto da legenda quando esta está desativada, default is DefaultDisabledLegendText
+          fontSize='1em'
+          iconSize={{width: '1em', height: '1em'}}
         />
       </header>
     </div>

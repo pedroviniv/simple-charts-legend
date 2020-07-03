@@ -28,10 +28,10 @@ function renderComponentOrContent(compOrContent, props) {
   return rendered;
 }
 
-function renderIcon(icon, disabledIcon, legend, disabledColor) {
+function renderIcon(icon, disabledIcon, legend, disabledColor, size) {
 
   let rendered;
-  const props = { legend, disabledColor };
+  const props = { legend, disabledColor, size };
 
   if (!legend.disabled) {
     rendered = renderComponentOrContent(icon, props);
@@ -40,6 +40,16 @@ function renderIcon(icon, disabledIcon, legend, disabledColor) {
   }
 
   return rendered;
+}
+
+/**
+ * default icon size used if a size is not provided
+ */
+function defaultIconSize() {
+  return {
+    width: '13px',
+    height: '13px',
+  };
 }
 
 /**
@@ -61,7 +71,9 @@ const LegendItem = ({
   disabledTextColor,
   maxCharacters = -1,
   disabledText = DefaultDisabledLegendText,
-  disabledIcon = DefaultDisabledLegendIcon }) => {
+  disabledIcon = DefaultDisabledLegendIcon,
+  iconSize = defaultIconSize(), /* { width: string, height: string } */
+  fontSize /* string. ex: '13px', '5em', '5%', etc */ }) => {
 
   const className = `legend-item${disabled ? ' disabled' : ''}`;
 
@@ -71,7 +83,7 @@ const LegendItem = ({
     disabled,
   };
 
-  const renderedIcon = renderIcon(icon, disabledIcon, target, disabledIconColor);
+  const renderedIcon = renderIcon(icon, disabledIcon, target, disabledIconColor, iconSize);
 
   const maxCharactersStyle = maxCharacters === -1 ? {} : {maxWidth: `${maxCharacters}ch`};
 
@@ -88,7 +100,7 @@ const LegendItem = ({
         {renderedIcon}
       </span>
       <span className='legend-text' style={maxCharactersStyle}>
-        { target.disabled ? disabledText({ legend: target, disabledTextColor }) : <span>{target.label}</span> }
+        { target.disabled ? disabledText({ legend: target, disabledTextColor, fontSize  }) : <span style={{ fontSize, }}>{target.label}</span> }
       </span>
     </li>
   );
