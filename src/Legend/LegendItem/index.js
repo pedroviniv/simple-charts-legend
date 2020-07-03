@@ -73,7 +73,8 @@ const LegendItem = ({
   disabledText = DefaultDisabledLegendText,
   disabledIcon = DefaultDisabledLegendIcon,
   iconSize = defaultIconSize(), /* { width: string, height: string } */
-  fontSize /* string. ex: '13px', '5em', '5%', etc */ }) => {
+  fontSize, /* string. ex: '13px', '5em', '5%', etc */
+  fontColor, }) => {
 
   const className = `legend-item${disabled ? ' disabled' : ''}`;
 
@@ -100,7 +101,7 @@ const LegendItem = ({
         {renderedIcon}
       </span>
       <span className='legend-text' style={maxCharactersStyle}>
-        { target.disabled ? disabledText({ legend: target, disabledTextColor, fontSize  }) : <span style={{ fontSize, }}>{target.label}</span> }
+        { target.disabled ? disabledText({ legend: target, disabledTextColor, fontSize  }) : <span style={{ fontSize, color: fontColor }}>{target.label}</span> }
       </span>
     </li>
   );

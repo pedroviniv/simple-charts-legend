@@ -31,6 +31,7 @@ function App() {
           disabledText={DefaultDisabledLegendText} // componente utilizado para renderizar o texto da legenda quando esta está desativada, default is DefaultDisabledLegendText
           fontSize='1em'
           iconSize={{width: '1em', height: '1em'}}
+          fontColor='#6C6C6C'
         />
       </header>
     </div>

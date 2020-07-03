@@ -17,13 +17,6 @@ var CircleLegendIcon = function CircleLegendIcon(_ref) {
   var legend = _ref.legend,
       disabledColor = _ref.disabledColor,
       size = _ref.size;
-  var cx = size.width / 2;
-  var cy = size.height / 2;
-  var r = size.width / 2;
-  console.log('size: ', size);
-  console.log('cx: ', cx);
-  console.log('cy: ', cy);
-  console.log('r: ', r);
   return /*#__PURE__*/_react["default"].createElement("span", null, /*#__PURE__*/_react["default"].createElement("svg", {
     style: {
       width: size.width,

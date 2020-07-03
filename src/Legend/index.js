@@ -25,7 +25,8 @@ const Legend = ({
   disabledText = DefaultDisabledLegendText,
   disabledIcon = DefaultDisabledLegendIcon,
   fontSize, /* string */
-  iconSize /* { width: string, height: stirng } */}) => {
+  iconSize, /* { width: string, height: stirng } */
+  fontColor }) => {
 
   const [selectedLegends, setSelectedLegends] = useState([]);
 
@@ -100,6 +101,7 @@ const Legend = ({
         disabledText={disabledText}
         fontSize={fontSize}
         iconSize={iconSize}
+        fontColor={fontColor}
       />
     );
   }
