@@ -74,7 +74,8 @@ const LegendItem = ({
   disabledIcon = DefaultDisabledLegendIcon,
   iconSize = defaultIconSize(), /* { width: string, height: string } */
   fontSize, /* string. ex: '13px', '5em', '5%', etc */
-  fontColor, }) => {
+  fontColor,
+  marginBottom }) => {
 
   const className = `legend-item${disabled ? ' disabled' : ''}`;
 
@@ -96,6 +97,7 @@ const LegendItem = ({
       onMouseOver={ev => onHover({target, enter: true})}
       onMouseLeave={ev => onHover({target, enter: false})}
       title={renderTitle(item)}
+      style={{ marginBottom, }}
     >
       <span className='legend-icon'>
         {renderedIcon}

@@ -17,7 +17,7 @@ function App() {
 
         <Legend
           data={legendData} // [{label,color}]
-          horizontalAlign='center' // alinha os itens horizontalmente. poder ser: start|end|center
+          horizontalAlign='start' // alinha os itens horizontalmente. poder ser: start|end|center
           verticalAlign='start' // alinha os itens verticalmente. pode ser: start|end|center
           onClick={(legend) => {}} // evento disparado quando uma legenda é clicada. legend: {label,index,color,disabled}
           onHover={(legend) => {}} // evento disparado quando o cursor está sobre uma legenda. legend: {label,index,color,disabled}
@@ -32,6 +32,7 @@ function App() {
           fontSize='1em'
           iconSize={{width: '1em', height: '1em'}}
           fontColor='#6C6C6C'
+          marginBottom='5px' // margin-bottom de cada legendItem
         />
       </header>
     </div>

@@ -108,7 +108,8 @@ var LegendItem = function LegendItem(_ref) {
       disabledIcon = _ref$disabledIcon === void 0 ? _DefaultDisabledLegendIcon["default"] : _ref$disabledIcon,
       _ref$iconSize = _ref.iconSize,
       iconSize = _ref$iconSize === void 0 ? defaultIconSize() : _ref$iconSize,
-      fontSize = _ref.fontSize;
+      fontSize = _ref.fontSize,
+      fontColor = _ref.fontColor;
   var className = "legend-item".concat(disabled ? ' disabled' : '');
 
   var target = _objectSpread(_objectSpread({}, item), {}, {
@@ -150,7 +151,8 @@ var LegendItem = function LegendItem(_ref) {
     fontSize: fontSize
   }) : /*#__PURE__*/_react["default"].createElement("span", {
     style: {
-      fontSize: fontSize
+      fontSize: fontSize,
+      color: fontColor
     }
   }, target.label)));
 };

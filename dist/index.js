@@ -77,7 +77,8 @@ var Legend = function Legend(_ref) {
       _ref$disabledIcon = _ref.disabledIcon,
       disabledIcon = _ref$disabledIcon === void 0 ? _DefaultDisabledLegendIcon["default"] : _ref$disabledIcon,
       fontSize = _ref.fontSize,
-      iconSize = _ref.iconSize;
+      iconSize = _ref.iconSize,
+      fontColor = _ref.fontColor;
 
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -157,7 +158,8 @@ var Legend = function Legend(_ref) {
       disabledIcon: disabledIcon,
       disabledText: disabledText,
       fontSize: fontSize,
-      iconSize: iconSize
+      iconSize: iconSize,
+      fontColor: fontColor
     });
   }
 
