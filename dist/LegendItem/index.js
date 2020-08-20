@@ -109,7 +109,8 @@ var LegendItem = function LegendItem(_ref) {
       _ref$iconSize = _ref.iconSize,
       iconSize = _ref$iconSize === void 0 ? defaultIconSize() : _ref$iconSize,
       fontSize = _ref.fontSize,
-      fontColor = _ref.fontColor;
+      fontColor = _ref.fontColor,
+      marginBottom = _ref.marginBottom;
   var className = "legend-item".concat(disabled ? ' disabled' : '');
 
   var target = _objectSpread(_objectSpread({}, item), {}, {
@@ -139,7 +140,10 @@ var LegendItem = function LegendItem(_ref) {
         enter: false
       });
     },
-    title: renderTitle(item)
+    title: renderTitle(item),
+    style: {
+      marginBottom: marginBottom
+    }
   }, /*#__PURE__*/_react["default"].createElement("span", {
     className: "legend-icon"
   }, renderedIcon), /*#__PURE__*/_react["default"].createElement("span", {
